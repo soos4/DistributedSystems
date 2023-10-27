@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "elosztott_gyak": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5004"
+      "applicationUrl": "http://localhost:5035"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -30,7 +30,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:3225",
+      "applicationUrl": "http://localhost:26241",
       "sslPort": 0
     }
   }

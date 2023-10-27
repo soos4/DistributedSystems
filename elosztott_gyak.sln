@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{FA1467D0-FF1D-42DF-8157-7E5F5D5A7A3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "elosztott-gyak", "elosztott_gyak\elosztott-gyak.csproj", "{961D8272-4700-4350-9893-DB196FDC4741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA1467D0-FF1D-42DF-8157-7E5F5D5A7A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA1467D0-FF1D-42DF-8157-7E5F5D5A7A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA1467D0-FF1D-42DF-8157-7E5F5D5A7A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA1467D0-FF1D-42DF-8157-7E5F5D5A7A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961D8272-4700-4350-9893-DB196FDC4741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961D8272-4700-4350-9893-DB196FDC4741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961D8272-4700-4350-9893-DB196FDC4741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961D8272-4700-4350-9893-DB196FDC4741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FE70A67E-52E9-41B1-BC20-F5978E6B21E1}
+		SolutionGuid = {F0427234-AAC8-4E1E-BB9D-DB221080F6BF}
 	EndGlobalSection
 EndGlobal
