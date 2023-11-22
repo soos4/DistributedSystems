@@ -9,15 +9,15 @@ namespace elosztott_gyak.Controllers
     public class CarController : ControllerBase
     {
         [HttpGet(Name = nameof(GetCar))]
-        public Car GetCar([FromHeader] string licensePlate)
+        public async Task<Car> GetCar([FromHeader] string licensePlate)
         {
-            return CarDb.GetInstance().GetCar(licensePlate);
+            return await CarDb.GetInstance().GetCar(licensePlate);
         }
 
         [HttpPost(Name = nameof(AddCar))]
-        public void AddCar([FromBody] Car car)
+        public async Task<Car> AddCar([FromBody] Car car)
         {
-            CarDb.GetInstance().AddCar(car);
+            return await CarDb.GetInstance().AddCar(car);
         }
     }
 }

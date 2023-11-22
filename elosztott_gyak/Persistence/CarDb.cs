@@ -1,16 +1,27 @@
 ﻿using elosztott_gyak.Model;
+using MongoDB.Driver;
 
 namespace elosztott_gyak.Persistence
 {
     public class CarDb
     {
+        private const string ConnectionString = "mongodb://root:rootpassword@localhost:27017";
+        private const string DbName = "db1";
+        private const string DbCollection = "cars";
+
         private static CarDb instance;
 
-        private List<Car> cars;
+        private IMongoDatabase database;
 
         private CarDb()
         {
-            cars = new List<Car>();
+            Connect(ConnectionString, DbName);
+        }
+
+        private void Connect(string connectionString, string dbName)
+        {
+            var client = new MongoClient(connectionString);
+            database = client.GetDatabase(dbName);
         }
 
         public static CarDb GetInstance()
@@ -23,25 +34,34 @@ namespace elosztott_gyak.Persistence
             return instance;
         }
 
-        public List<Car> GetCars()
+        public async Task<List<Car>> GetCars()
         {
-            return cars;
+            if (database == null) return null;
+
+            IMongoCollection<Car> carsCollection = database.GetCollection<Car>(DbCollection);
+
+            return (await carsCollection.FindAsync(Builders<Car>.Filter.Empty)).ToList();
         }
 
-        public Car? GetCar(string licensePlate)
+        public async Task<Car> GetCar(string licensePlate)
         {
-            foreach (var car in cars)
-            {
-                if (car.LicensePlate == licensePlate)
-                    return car;
-            }
+            if (database == null) return null;
 
-            return null;
+            IMongoCollection<Car> carsCollection = database.GetCollection<Car>(DbCollection);
+
+            return (await carsCollection.FindAsync(car => car.LicensePlate.Equals(licensePlate))).ToList()
+                .FirstOrDefault();
         }
 
-        public void AddCar(Car car)
+        public async Task<Car> AddCar(Car car)
         {
-            cars.Add(car);
+            if (car == null) return null;
+
+            IMongoCollection<Car> carsCollection = database.GetCollection<Car>(DbCollection);
+            if (carsCollection == null) return null;
+
+            await carsCollection.InsertOneAsync(car);
+            return car;
         }
     }
 }

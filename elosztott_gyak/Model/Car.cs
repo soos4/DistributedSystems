@@ -1,5 +1,8 @@
-﻿namespace elosztott_gyak.Model
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace elosztott_gyak.Model
 {
+    [BsonIgnoreExtraElements]
     public class Car
     {
         public string LicensePlate { get; set; }
